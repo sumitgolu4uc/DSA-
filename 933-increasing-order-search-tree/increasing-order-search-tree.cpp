@@ -22,7 +22,8 @@ public:
         inorder(root,in);
         for(int i=0;i<in.size();i++){
             in[i]->left=nullptr;
-            in[i]->right=(i+1<in.size())?in[i+1]:nullptr;
+            if(i==in.size()-1) in[i]->right=nullptr;
+            else in[i]->right=in[i+1];
         }
         return in[0];
 
